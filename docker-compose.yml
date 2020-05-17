@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  securemedicalrecord:
+    image: ${DOCKER_REGISTRY-}securemedicalrecord
+    build:
+      context: .\SecureMedicalRecord
+      dockerfile: Dockerfile

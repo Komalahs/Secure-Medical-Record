@@ -1,0 +1,658 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.9.10\build\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.props" Condition="Exists('..\packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.9.10\build\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8B9CB0BB-B094-40F7-A758-E34F12AB7EC0}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SecureMedicalRecord</RootNamespace>
+    <AssemblyName>SecureMedicalRecord</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
+    <DockerLaunchUrl>http://{ServiceIPAddress}</DockerLaunchUrl>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=3.5.7.123, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLL\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MySql.Data, Version=6.8.7.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLL\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLL\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="StemmersNet, Version=1.1.1.0, Culture=neutral, PublicKeyToken=5b16b226aedf3c3b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLL\StemmersNet.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AddDepartment.aspx" />
+    <Content Include="AddDoctor.aspx" />
+    <Content Include="AddHospital.aspx" />
+    <Content Include="AddPatient.aspx" />
+    <Content Include="AddPatientClinical.aspx" />
+    <Content Include="AddPatientTreatment.aspx" />
+    <Content Include="AdminHome.aspx" />
+    <Content Include="ApproveAuthorizedMD.aspx" />
+    <Content Include="ApproveDoctorMD.aspx" />
+    <Content Include="BootStrap_DataPicker\CSS\bootstrap.css" />
+    <Content Include="BootStrap_DataPicker\CSS\Style.css" />
+    <Content Include="BootStrap_DataPicker\DatePicker\bootstrap-datepicker.css" />
+    <Content Include="BootStrap_DataPicker\DatePicker\bootstrap-datepicker.js" />
+    <Content Include="BootStrap_DataPicker\DatePicker\locales\bootstrap-datepicker.ar.js" />
+    <Content Include="BootStrap_DataPicker\DatePicker\locales\bootstrap-datepicker.az.js" />
+    <Content Include="BootStrap_DataPicker\DatePicker\locales\bootstrap-datepicker.bg.js" />
+    <Content Include="BootStrap_DataPicker\DatePicker\locales\bootstrap-datepicker.ca.js" />
+    <Content Include="BootStrap_DataPicker\DatePicker\locales\bootstrap-datepicker.cs.js" />
+    <Content Include="BootStrap_DataPicker\DatePicker\locales\bootstrap-datepicker.cy.js" />
+    <Content Include="BootStrap_DataPicker\DatePicker\locales\bootstrap-datepicker.da.js" />
+    <Content Include="BootStrap_DataPicker\DatePicker\locales\bootstrap-datepicker.de.js" />
+    <Content Include="BootStrap_DataPicker\DatePicker\locales\bootstrap-datepicker.el.js" />
+    <Content Include="BootStrap_DataPicker\DatePicker\locales\bootstrap-datepicker.es.js" />
+    <Content Include="BootStrap_DataPicker\DatePicker\locales\bootstrap-datepicker.et.js" />
+    <Content Include="BootStrap_DataPicker\DatePicker\locales\bootstrap-datepicker.fa.js" />
+    <Content Include="BootStrap_DataPicker\DatePicker\locales\bootstrap-datepicker.fi.js" />
+    <Content Include="BootStrap_DataPicker\DatePicker\locales\bootstrap-datepicker.fr.js" />
+    <Content Include="BootStrap_DataPicker\DatePicker\locales\bootstrap-datepicker.gl.js" />
+    <Content Include="BootStrap_DataPicker\DatePicker\locales\bootstrap-datepicker.he.js" />
+    <Content Include="BootStrap_DataPicker\DatePicker\locales\bootstrap-datepicker.hr.js" />
+    <Content Include="BootStrap_DataPicker\DatePicker\locales\bootstrap-datepicker.hu.js" />
+    <Content Include="BootStrap_DataPicker\DatePicker\locales\bootstrap-datepicker.id.js" />
+    <Content Include="BootStrap_DataPicker\DatePicker\locales\bootstrap-datepicker.is.js" />
+    <Content Include="BootStrap_DataPicker\DatePicker\locales\bootstrap-datepicker.it.js" />
+    <Content Include="BootStrap_DataPicker\DatePicker\locales\bootstrap-datepicker.ja.js" />
+    <Content Include="BootStrap_DataPicker\DatePicker\locales\bootstrap-datepicker.ka.js" />
+    <Content Include="BootStrap_DataPicker\DatePicker\locales\bootstrap-datepicker.kk.js" />
+    <Content Include="BootStrap_DataPicker\DatePicker\locales\bootstrap-datepicker.kr.js" />
+    <Content Include="BootStrap_DataPicker\DatePicker\locales\bootstrap-datepicker.lt.js" />
+    <Content Include="BootStrap_DataPicker\DatePicker\locales\bootstrap-datepicker.lv.js" />
+    <Content Include="BootStrap_DataPicker\DatePicker\locales\bootstrap-datepicker.mk.js" />
+    <Content Include="BootStrap_DataPicker\DatePicker\locales\bootstrap-datepicker.ms.js" />
+    <Content Include="BootStrap_DataPicker\DatePicker\locales\bootstrap-datepicker.nb.js" />
+    <Content Include="BootStrap_DataPicker\DatePicker\locales\bootstrap-datepicker.nl-BE.js" />
+    <Content Include="BootStrap_DataPicker\DatePicker\locales\bootstrap-datepicker.nl.js" />
+    <Content Include="BootStrap_DataPicker\DatePicker\locales\bootstrap-datepicker.no.js" />
+    <Content Include="BootStrap_DataPicker\DatePicker\locales\bootstrap-datepicker.pl.js" />
+    <Content Include="BootStrap_DataPicker\DatePicker\locales\bootstrap-datepicker.pt-BR.js" />
+    <Content Include="BootStrap_DataPicker\DatePicker\locales\bootstrap-datepicker.pt.js" />
+    <Content Include="BootStrap_DataPicker\DatePicker\locales\bootstrap-datepicker.ro.js" />
+    <Content Include="BootStrap_DataPicker\DatePicker\locales\bootstrap-datepicker.rs-latin.js" />
+    <Content Include="BootStrap_DataPicker\DatePicker\locales\bootstrap-datepicker.rs.js" />
+    <Content Include="BootStrap_DataPicker\DatePicker\locales\bootstrap-datepicker.ru.js" />
+    <Content Include="BootStrap_DataPicker\DatePicker\locales\bootstrap-datepicker.sk.js" />
+    <Content Include="BootStrap_DataPicker\DatePicker\locales\bootstrap-datepicker.sl.js" />
+    <Content Include="BootStrap_DataPicker\DatePicker\locales\bootstrap-datepicker.sq.js" />
+    <Content Include="BootStrap_DataPicker\DatePicker\locales\bootstrap-datepicker.sv.js" />
+    <Content Include="BootStrap_DataPicker\DatePicker\locales\bootstrap-datepicker.sw.js" />
+    <Content Include="BootStrap_DataPicker\DatePicker\locales\bootstrap-datepicker.th.js" />
+    <Content Include="BootStrap_DataPicker\DatePicker\locales\bootstrap-datepicker.tr.js" />
+    <Content Include="BootStrap_DataPicker\DatePicker\locales\bootstrap-datepicker.ua.js" />
+    <Content Include="BootStrap_DataPicker\DatePicker\locales\bootstrap-datepicker.vi.js" />
+    <Content Include="BootStrap_DataPicker\DatePicker\locales\bootstrap-datepicker.zh-CN.js" />
+    <Content Include="BootStrap_DataPicker\DatePicker\locales\bootstrap-datepicker.zh-TW.js" />
+    <Content Include="BootStrap_DataPicker\JS\jquery-1.10.2.min.js" />
+    <Content Include="css\animate.css" />
+    <Content Include="css\bootstrap.css" />
+    <Content Include="css\chocolat.css" />
+    <Content Include="css\css_style.css" />
+    <Content Include="css\custom.css" />
+    <Content Include="css\export.css" />
+    <Content Include="css\flexslider.css" />
+    <Content Include="css\font-awesome.css" />
+    <Content Include="css\graph.css" />
+    <Content Include="css\jqcandlestick.css" />
+    <Content Include="css\lightbox.css" />
+    <Content Include="css\menu_topexpand.css" />
+    <Content Include="css\monthly.css" />
+    <Content Include="css\owl.carousel.css" />
+    <Content Include="css\SidebarNav.min.css" />
+    <Content Include="css\style.css" />
+    <Content Include="css\style_css.css" />
+    <Content Include="css_css\animate.css" />
+    <Content Include="css_css\bootstrap.css" />
+    <Content Include="css_css\custom.css" />
+    <Content Include="css_css\export.css" />
+    <Content Include="css_css\font-awesome.css" />
+    <Content Include="css_css\graph.css" />
+    <Content Include="css_css\jqcandlestick.css" />
+    <Content Include="css_css\monthly.css" />
+    <Content Include="css_css\owl.carousel.css" />
+    <Content Include="css_css\SidebarNav.min.css" />
+    <Content Include="css_css\style.css" />
+    <Content Include="DLL\AjaxControlToolkit.dll" />
+    <Content Include="DLL\MySql.Data.dll" />
+    <Content Include="DLL\Newtonsoft.Json.dll" />
+    <Content Include="DLL\StemmersNet.dll" />
+    <Content Include="DoctorHome.aspx" />
+    <Content Include="DoctorTimings.aspx" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="HospitalHome.aspx" />
+    <Content Include="images\1.jpg" />
+    <Content Include="images\2.jpg" />
+    <Content Include="images\2.png" />
+    <Content Include="images\3.jpg" />
+    <Content Include="images\4.jpg" />
+    <Content Include="images\a.png" />
+    <Content Include="images\a1.jpg" />
+    <Content Include="images\arr.png" />
+    <Content Include="images\arrow.png" />
+    <Content Include="images\arrows.png" />
+    <Content Include="images\b1.jpg" />
+    <Content Include="images\b2.jpg" />
+    <Content Include="images\b3.jpg" />
+    <Content Include="images\b4.jpg" />
+    <Content Include="images\b7.jpg" />
+    <Content Include="images\banner.jpg" />
+    <Content Include="images\bg.jpg" />
+    <Content Include="images\bg1.jpg" />
+    <Content Include="images\bg7.jpg" />
+    <Content Include="images\c1.jpg" />
+    <Content Include="images\c2.jpg" />
+    <Content Include="images\c3.jpg" />
+    <Content Include="images\close.png" />
+    <Content Include="images\f1.jpg" />
+    <Content Include="images\f2.jpg" />
+    <Content Include="images\f3.jpg" />
+    <Content Include="images\g1.jpg" />
+    <Content Include="images\g2.jpg" />
+    <Content Include="images\g3.jpg" />
+    <Content Include="images\g4.jpg" />
+    <Content Include="images\g5.jpg" />
+    <Content Include="images\g6.jpg" />
+    <Content Include="images\g7.jpg" />
+    <Content Include="images\g8.jpg" />
+    <Content Include="images\i1.png" />
+    <Content Include="images\i2.png" />
+    <Content Include="images\i3.png" />
+    <Content Include="images\i4.png" />
+    <Content Include="images\img-sprite.png" />
+    <Content Include="images\img1.png" />
+    <Content Include="images\left.png" />
+    <Content Include="images\lock.png" />
+    <Content Include="images\mail.png" />
+    <Content Include="images\n1.jpg" />
+    <Content Include="images\n2.jpg" />
+    <Content Include="images\n3.jpg" />
+    <Content Include="images\next.png" />
+    <Content Include="images\prev.png" />
+    <Content Include="images\right.png" />
+    <Content Include="images\search-icon.png" />
+    <Content Include="images\search.png" />
+    <Content Include="images\slider1.jpg" />
+    <Content Include="images\slider2.jpg" />
+    <Content Include="images\slider3.jpg" />
+    <Content Include="images\slider4.jpg" />
+    <Content Include="images\slider5.jpg" />
+    <Content Include="images\slider6.jpg" />
+    <Content Include="images\slider7.jpg" />
+    <Content Include="images\t1.jpg" />
+    <Content Include="images\t2.jpg" />
+    <Content Include="images\t3.jpg" />
+    <Content Include="images\tick.png" />
+    <Content Include="images\user.png" />
+    <Content Include="images\weather.jpg" />
+    <Content Include="index.aspx" />
+    <Content Include="js\amcharts.js" />
+    <Content Include="js\bootstrap.js" />
+    <Content Include="js\Chart.bundle.js" />
+    <Content Include="js\Chart.js" />
+    <Content Include="js\Chart.min.js" />
+    <Content Include="js\chartinator.js" />
+    <Content Include="js\classie.js" />
+    <Content Include="js\custom.js" />
+    <Content Include="js\easing.js" />
+    <Content Include="js\export.min.js" />
+    <Content Include="js\images\dragIconRoundBig.svg" />
+    <Content Include="js\images\lens.svg" />
+    <Content Include="js\index.js" />
+    <Content Include="js\index1.js" />
+    <Content Include="js\index2.js" />
+    <Content Include="js\jquery-1.11.1.min.js" />
+    <Content Include="js\jquery-2.1.4.min.js" />
+    <Content Include="js\jquery-2.2.3.min.js" />
+    <Content Include="js\jquery.chocolat.js" />
+    <Content Include="js\jquery.countup.js" />
+    <Content Include="js\jquery.flexslider.js" />
+    <Content Include="js\jquery.flot.js" />
+    <Content Include="js\jquery.gauge.js" />
+    <Content Include="js\jquery.jqcandlestick.min.js" />
+    <Content Include="js\jquery.nicescroll.js" />
+    <Content Include="js\jquery.waypoints.min.js" />
+    <Content Include="js\light.js" />
+    <Content Include="js\lightbox-plus-jquery.min.js" />
+    <Content Include="js\main.js" />
+    <Content Include="js\metisMenu.min.js" />
+    <Content Include="js\modernizr.custom.js" />
+    <Content Include="js\monthly.js" />
+    <Content Include="js\move-top.js" />
+    <Content Include="js\owl.carousel.js" />
+    <Content Include="js\pie-chart.js" />
+    <Content Include="js\responsiveslides.min.js" />
+    <Content Include="js\scripts.js" />
+    <Content Include="js\serial.js" />
+    <Content Include="js\SidebarNav.min.js" />
+    <Content Include="js\SimpleChart.js" />
+    <Content Include="js\utils.js" />
+    <Content Include="js\validator.min.js" />
+    <Content Include="js_js\amcharts.js" />
+    <Content Include="js_js\bootstrap.js" />
+    <Content Include="js_js\Chart.bundle.js" />
+    <Content Include="js_js\Chart.js" />
+    <Content Include="js_js\Chart.min.js" />
+    <Content Include="js_js\chartinator.js" />
+    <Content Include="js_js\classie.js" />
+    <Content Include="js_js\custom.js" />
+    <Content Include="js_js\export.min.js" />
+    <Content Include="js_js\images\dragIconRoundBig.svg" />
+    <Content Include="js_js\images\lens.svg" />
+    <Content Include="js_js\index.js" />
+    <Content Include="js_js\index1.js" />
+    <Content Include="js_js\index2.js" />
+    <Content Include="js_js\jquery-1.11.1.min.js" />
+    <Content Include="js_js\jquery.flot.js" />
+    <Content Include="js_js\jquery.jqcandlestick.min.js" />
+    <Content Include="js_js\jquery.nicescroll.js" />
+    <Content Include="js_js\light.js" />
+    <Content Include="js_js\metisMenu.min.js" />
+    <Content Include="js_js\modernizr.custom.js" />
+    <Content Include="js_js\monthly.js" />
+    <Content Include="js_js\owl.carousel.js" />
+    <Content Include="js_js\pie-chart.js" />
+    <Content Include="js_js\scripts.js" />
+    <Content Include="js_js\serial.js" />
+    <Content Include="js_js\SidebarNav.min.js" />
+    <Content Include="js_js\SimpleChart.js" />
+    <Content Include="js_js\utils.js" />
+    <Content Include="js_js\validator.min.js" />
+    <Content Include="Keypoints\n.txt" />
+    <Content Include="Keypoints\P.txt" />
+    <Content Include="Login.aspx" />
+    <Content Include="PatientConsultDetails.aspx" />
+    <Content Include="PatientHome.aspx" />
+    <Content Include="PatientViewTreatment.aspx" />
+    <Content Include="Photos\Adm.jpg" />
+    <Content Include="Photos\administrator.png" />
+    <Content Include="Photos\can-stock-photo_csp6563137.jpg" />
+    <Content Include="Photos\FilledStar.gif" />
+    <Content Include="Photos\images %282%29.jpg" />
+    <Content Include="Photos\images %285%29.jpg" />
+    <Content Include="Photos\images.png" />
+    <Content Include="Photos\Star.gif" />
+    <Content Include="Photos\user2.png" />
+    <Content Include="Photos\WaitingStar.gif" />
+    <Content Include="PostComments.aspx" />
+    <Content Include="RequestAuthorizedMD.aspx" />
+    <Content Include="RequestDoctorMD.aspx" />
+    <Content Include="scripts\ai.0.22.9-build00167.js" />
+    <Content Include="scripts\ai.0.22.9-build00167.min.js" />
+    <Content Include="UploadDoctorMR.aspx" />
+    <Content Include="UploadMedicalRecord.aspx" />
+    <Content Include="ViewAuthorizedMD.aspx" />
+    <Content Include="ViewDoctorMD.aspx" />
+    <Content Include="ViewGeneralMD.aspx" />
+    <Content Include="VisitorViewRatings.aspx" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddDepartment.aspx.cs">
+      <DependentUpon>AddDepartment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddDepartment.aspx.designer.cs">
+      <DependentUpon>AddDepartment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddDoctor.aspx.cs">
+      <DependentUpon>AddDoctor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddDoctor.aspx.designer.cs">
+      <DependentUpon>AddDoctor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddHospital.aspx.cs">
+      <DependentUpon>AddHospital.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddHospital.aspx.designer.cs">
+      <DependentUpon>AddHospital.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddPatient.aspx.cs">
+      <DependentUpon>AddPatient.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddPatient.aspx.designer.cs">
+      <DependentUpon>AddPatient.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddPatientClinical.aspx.cs">
+      <DependentUpon>AddPatientClinical.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddPatientClinical.aspx.designer.cs">
+      <DependentUpon>AddPatientClinical.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddPatientTreatment.aspx.cs">
+      <DependentUpon>AddPatientTreatment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddPatientTreatment.aspx.designer.cs">
+      <DependentUpon>AddPatientTreatment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin.Master.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin.Master.designer.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="AdminHome.aspx.cs">
+      <DependentUpon>AdminHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminHome.aspx.designer.cs">
+      <DependentUpon>AdminHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AESCryptoClass.cs" />
+    <Compile Include="ApproveAuthorizedMD.aspx.cs">
+      <DependentUpon>ApproveAuthorizedMD.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ApproveAuthorizedMD.aspx.designer.cs">
+      <DependentUpon>ApproveAuthorizedMD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ApproveDoctorMD.aspx.cs">
+      <DependentUpon>ApproveDoctorMD.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ApproveDoctorMD.aspx.designer.cs">
+      <DependentUpon>ApproveDoctorMD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\SecureMedicalRecordBLL.cs" />
+    <Compile Include="DAL\SecureMedicalRecordDAL.cs" />
+    <Compile Include="Doctor.Master.cs">
+      <DependentUpon>Doctor.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Doctor.Master.designer.cs">
+      <DependentUpon>Doctor.Master</DependentUpon>
+    </Compile>
+    <Compile Include="DoctorHome.aspx.cs">
+      <DependentUpon>DoctorHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DoctorHome.aspx.designer.cs">
+      <DependentUpon>DoctorHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DoctorTimings.aspx.cs">
+      <DependentUpon>DoctorTimings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DoctorTimings.aspx.designer.cs">
+      <DependentUpon>DoctorTimings.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\SecureMedicalRecordDTO.cs" />
+    <Compile Include="GetDecryptData.cs" />
+    <Compile Include="Hospital.Master.cs">
+      <DependentUpon>Hospital.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Hospital.Master.designer.cs">
+      <DependentUpon>Hospital.Master</DependentUpon>
+    </Compile>
+    <Compile Include="HospitalHome.aspx.cs">
+      <DependentUpon>HospitalHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HospitalHome.aspx.designer.cs">
+      <DependentUpon>HospitalHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="index.Master.cs">
+      <DependentUpon>index.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="index.Master.designer.cs">
+      <DependentUpon>index.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NLP\CleanSentence.cs" />
+    <Compile Include="NLP\PosNeg.cs" />
+    <Compile Include="NLP\Tokenizer.cs" />
+    <Compile Include="Patient.Master.cs">
+      <DependentUpon>Patient.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Patient.Master.designer.cs">
+      <DependentUpon>Patient.Master</DependentUpon>
+    </Compile>
+    <Compile Include="PatientConsultDetails.aspx.cs">
+      <DependentUpon>PatientConsultDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PatientConsultDetails.aspx.designer.cs">
+      <DependentUpon>PatientConsultDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PatientHome.aspx.cs">
+      <DependentUpon>PatientHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PatientHome.aspx.designer.cs">
+      <DependentUpon>PatientHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PatientViewTreatment.aspx.cs">
+      <DependentUpon>PatientViewTreatment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PatientViewTreatment.aspx.designer.cs">
+      <DependentUpon>PatientViewTreatment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PostComments.aspx.cs">
+      <DependentUpon>PostComments.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PostComments.aspx.designer.cs">
+      <DependentUpon>PostComments.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RequestAuthorizedMD.aspx.cs">
+      <DependentUpon>RequestAuthorizedMD.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RequestAuthorizedMD.aspx.designer.cs">
+      <DependentUpon>RequestAuthorizedMD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RequestDoctorMD.aspx.cs">
+      <DependentUpon>RequestDoctorMD.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RequestDoctorMD.aspx.designer.cs">
+      <DependentUpon>RequestDoctorMD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SendEmail.cs" />
+    <Compile Include="Shamir.cs" />
+    <Compile Include="UploadDoctorMR.aspx.cs">
+      <DependentUpon>UploadDoctorMR.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UploadDoctorMR.aspx.designer.cs">
+      <DependentUpon>UploadDoctorMR.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UploadMedicalRecord.aspx.cs">
+      <DependentUpon>UploadMedicalRecord.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UploadMedicalRecord.aspx.designer.cs">
+      <DependentUpon>UploadMedicalRecord.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewAuthorizedMD.aspx.cs">
+      <DependentUpon>ViewAuthorizedMD.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewAuthorizedMD.aspx.designer.cs">
+      <DependentUpon>ViewAuthorizedMD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewDoctorMD.aspx.cs">
+      <DependentUpon>ViewDoctorMD.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewDoctorMD.aspx.designer.cs">
+      <DependentUpon>ViewDoctorMD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewGeneralMD.aspx.cs">
+      <DependentUpon>ViewGeneralMD.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewGeneralMD.aspx.designer.cs">
+      <DependentUpon>ViewGeneralMD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VisitorViewRatings.aspx.cs">
+      <DependentUpon>VisitorViewRatings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VisitorViewRatings.aspx.designer.cs">
+      <DependentUpon>VisitorViewRatings.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admin.Master" />
+    <Content Include="index.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Doctor.Master" />
+    <None Include="Dockerfile" />
+    <None Include=".dockerignore">
+      <DependentUpon>Dockerfile</DependentUpon>
+    </None>
+    <None Include="fonts\fontawesome-webfont.eot" />
+    <None Include="fonts\fontawesome-webfont.ttf" />
+    <None Include="fonts\fontawesome-webfont.woff" />
+    <None Include="fonts\fontawesome-webfont.woff2" />
+    <None Include="fonts\FontAwesome.otf" />
+    <None Include="fonts\glyphicons-halflings-regular.eot" />
+    <None Include="fonts\glyphicons-halflings-regular.ttf" />
+    <None Include="fonts\glyphicons-halflings-regular.woff" />
+    <None Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Hospital.Master" />
+    <Content Include="Patient.Master" />
+    <None Include="packages.config" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\registry.hub.docker.com_raghusetty01.pubxml" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>19457</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.9.10\build\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.9.10\build\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.9.10\build\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.9.10\build\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.targets'))" />
+  </Target>
+  <Import Project="..\packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.9.10\build\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.targets" Condition="Exists('..\packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.9.10\build\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

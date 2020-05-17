@@ -1,0 +1,68 @@
+﻿good,3
+very good,4
+excellent,5
+extraordinary,5
+ordinary,3
+nice,3
+best,4
+improve,4
+excellent hold,5
+helped,3
+useful,4
+happy,4
+prefer,4
+informative,4
+super,4
+awesome,5
+learnt,4
+great,5
+enjoyed,4
+wonderful,5
+satisfactory,3
+thankful,4
+beneficial,3
+strong,3
+ok,2
+knowledgeable,4
+cooperated,4
+well,3
+interesting,4
+good experience,4
+fantastic,5
+positive,4
+easy,3
+satisfied,3
+well organised,4
+interactive ,3
+insightful,4
+honoured,4
+confidence,3
+effective,4
+enthusiasm,3
+recommend,4
+amazing,4
+superb,4
+worth,3
+inspite,2
+attentive,4
+professional,3
+pleasant,4
+helpful,
+delicious,4
+spectacular,4
+flavorful,4
+presentation,4
+tasty,3
+flavor,3
+nicely toasted,4
+perfectly ripe,4
+incredible meal,4
+smoky flavor,4
+impeccable,5
+crunchy ,5
+fluffy,4
+crispness,5
+pleasing,4
+delight,5
+generous,4
+terrific,3

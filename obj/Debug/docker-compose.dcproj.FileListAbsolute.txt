@@ -1,0 +1,7 @@
+E:\Raghu\My Work\FinalSecureMedicalRecord\FinalSecureMedicalRecord\bin\Debug\SecureMedicalRecord.dll
+E:\Raghu\My Work\FinalSecureMedicalRecord\FinalSecureMedicalRecord\bin\Debug\StemmersNet.dll
+E:\Raghu\My Work\FinalSecureMedicalRecord\FinalSecureMedicalRecord\bin\Debug\MySql.Data.dll
+E:\Raghu\My Work\FinalSecureMedicalRecord\FinalSecureMedicalRecord\bin\Debug\SecureMedicalRecord.pdb
+E:\Raghu\My Work\FinalSecureMedicalRecord\FinalSecureMedicalRecord\bin\Debug\SecureMedicalRecord.dll.config
+E:\Raghu\My Work\FinalSecureMedicalRecord\FinalSecureMedicalRecord\obj\Debug\docker-compose.dcprojAssemblyReference.cache
+E:\Raghu\My Work\FinalSecureMedicalRecord\FinalSecureMedicalRecord\obj\Debug\docker-compose.dcproj.CopyComplete

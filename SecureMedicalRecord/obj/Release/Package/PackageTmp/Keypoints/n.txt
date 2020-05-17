@@ -1,0 +1,30 @@
+bad,2
+worst,1
+worse,1
+very bad,1
+not good,2
+hopeless,1
+but,2
+average,1
+negative,1
+It would have been,1
+issue,1
+lag,1
+useless,1
+not worth,1
+fault,1
+unsatisfied,1
+never recommend,1
+terrible,1
+poor,1
+avoid,1
+disappointed,1
+dissatisfied,1
+difficult,1
+disappointing,1
+defect,1
+less,1
+pathetic,1
+fail,1
+failed,1
+fails,1

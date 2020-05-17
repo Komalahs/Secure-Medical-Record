@@ -1,0 +1,9 @@
+services:
+  securemedicalrecord:
+    build:
+      context: E:\Raghu\My Work\FinalSecureMedicalRecord\FinalSecureMedicalRecord\SecureMedicalRecord
+      dockerfile: Dockerfile
+    image: securemedicalrecord
+    ports:
+    - target: 80
+version: '3.4'
